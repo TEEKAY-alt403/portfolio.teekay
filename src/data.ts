@@ -7,6 +7,8 @@ export type Project = {
   liveUrl?: string
   status?: string
   featured?: boolean
+  problem?: string
+  outcome?: string
 }
 
 export const skills = [
@@ -29,6 +31,8 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Tailwind'],
     href: 'https://github.com/TEEKAY-alt403/Portfolio-website',
     featured: true,
+    problem: 'Create a portfolio that communicates frontend ability quickly while remaining easy to navigate on desktop and mobile.',
+    outcome: 'A structured single-page experience with clearer hierarchy, responsive navigation, accessible controls and SEO-ready metadata.',
   },
   {
     title: 'E-commerce Store',
@@ -38,6 +42,8 @@ export const projects: Project[] = [
     stack: ['React', 'JavaScript', 'CSS'],
     status: 'In development',
     featured: true,
+    problem: 'Design a practical storefront experience that keeps product discovery and core shopping interactions simple.',
+    outcome: 'An evolving application foundation covering responsive layouts, application state and reusable interface patterns.',
   },
 ]
 
