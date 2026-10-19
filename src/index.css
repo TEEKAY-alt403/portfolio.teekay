@@ -3,14 +3,23 @@
 :root {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #f5f7fa;
-  background: #08090c;
+  background: #061713;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-body { margin: 0; min-width: 320px; background: #08090c; }
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(ellipse at 12% 12%, rgba(16, 185, 129, .18), transparent 38%),
+    radial-gradient(ellipse at 88% 42%, rgba(6, 182, 212, .12), transparent 42%),
+    radial-gradient(ellipse at 50% 90%, rgba(79, 70, 229, .10), transparent 45%),
+    linear-gradient(135deg, #062c24 0%, #071b22 48%, #0a1020 100%);
+  background-attachment: fixed;
+}
 body.menu-open { overflow: hidden; }
 * { box-sizing: border-box; }
 ::selection { background: rgba(99, 102, 241, .35); color: white; }
@@ -26,18 +35,31 @@ a { overflow-wrap: anywhere; }
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes glow-breathe {
+  0%, 100% { opacity: .55; transform: scale(1); }
+  50% { opacity: .9; transform: scale(1.06); }
+}
 
 .animate-float { animation: float 5s ease-in-out infinite; }
+.animate-enter { animation: fade-up 700ms cubic-bezier(.2,.75,.25,1) both; }
+.animate-enter-delay-1 { animation-delay: 100ms; }
+.animate-enter-delay-2 { animation-delay: 200ms; }
+.animate-enter-delay-3 { animation-delay: 300ms; }
+.animate-glow { animation: glow-breathe 9s ease-in-out infinite; }
 
 .grid-bg {
   background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
   background-size: 48px 48px;
+  background-position: center top;
 }
 
 .surface-hover {
   transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
 }
-
 .surface-hover:hover {
   transform: translateY(-4px);
   border-color: rgba(129, 140, 248, .28);
@@ -48,13 +70,12 @@ a { overflow-wrap: anywhere; }
 @media (pointer: coarse) {
   button, a { -webkit-tap-highlight-color: transparent; }
 }
-
 @media (max-width: 640px) {
   html { scroll-padding-top: 76px; }
   section { scroll-margin-top: 76px; }
   h1 { text-wrap: balance; }
+  body { background-attachment: scroll; }
 }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
