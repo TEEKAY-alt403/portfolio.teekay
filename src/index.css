@@ -3,22 +3,31 @@
 :root {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #f5f7fa;
-  background: #07111b;
+  background: #061713;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; background: #08090c; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #061713;
+}
 
 .site-background {
   position: relative;
+  min-height: 100vh;
   isolation: isolate;
-  background:
-    radial-gradient(ellipse at 8% 12%, rgba(16, 185, 129, .22), transparent 32rem),
-    radial-gradient(ellipse at 92% 18%, rgba(6, 182, 212, .17), transparent 30rem),
-    radial-gradient(ellipse at 52% 78%, rgba(20, 83, 45, .20), transparent 38rem),
-    linear-gradient(145deg, #071b19 0%, #07111b 48%, #090d18 100%);
+  background-color: #061713;
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(5, 150, 105, .42), transparent 42rem),
+    radial-gradient(ellipse at 100% 12%, rgba(8, 145, 178, .34), transparent 38rem),
+    radial-gradient(ellipse at 55% 58%, rgba(21, 128, 61, .22), transparent 48rem),
+    linear-gradient(135deg, #062c24 0%, #071b22 48%, #0a1020 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .site-background::before {
@@ -28,13 +37,16 @@ body { margin: 0; min-width: 320px; background: #08090c; }
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 18% 30%, rgba(52, 211, 153, .10), transparent 20rem),
-    radial-gradient(ellipse at 82% 55%, rgba(34, 211, 238, .08), transparent 24rem);
-  opacity: .9;
+    radial-gradient(circle at 20% 20%, rgba(52, 211, 153, .12), transparent 28rem),
+    radial-gradient(circle at 80% 45%, rgba(34, 211, 238, .10), transparent 30rem);
 }
 
 * { box-sizing: border-box; }
-::selection { background: rgba(99, 102, 241, .35); color: white; }
+
+::selection {
+  background: rgba(16, 185, 129, .4);
+  color: white;
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
