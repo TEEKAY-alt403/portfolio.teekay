@@ -1,0 +1,22 @@
+node_modules/
+
+# Build output
+dist/
+
+# Local backups
+*.backup
+*.polish-backup
+*.theme-backup
+*.ui-backup
+
+# Nested copy of the project
+/portfolio.teekay/
+
+# Backup files
+*-backup
+
+# Nested copy of the project
+/portfolio.teekay/
+
+# Backup files
+*-backup
